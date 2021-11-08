@@ -3,10 +3,9 @@ FROM ruby:2.3.8-stretch
 MAINTAINER Vitaly Pryakhin <v.pryakhin@gmail.com>
 
 RUN useradd app
-RUN mkdir /home/app
-RUN mkdir /home/app/qamail
+RUN mkdir -p /home/app/Maildir/new
+RUN mkdir -p /home/app/qamail
 RUN touch /home/app/qamail/letter_import.pid
-RUN mkdir /home/app/Maildir
 RUN apt-get update
 
 COPY . /home/app/qamail
