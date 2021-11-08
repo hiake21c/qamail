@@ -78,7 +78,7 @@ def forward_letter(letter, log)
 end
 
 import_thread = Thread.new do
-  dir = $settings['maildir'] + "/new"
+  dir = $settings['maildir'] + "new"
   Dir.chdir(dir)
   while(1 == 1) do
     Dir.foreach(".") do |file|
