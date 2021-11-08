@@ -13,7 +13,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/web/Dockerfile
-    image: qamail-web 
+    image: kgpp/qamail-web
     restart: always
     ports:
       - 80:80
@@ -24,7 +24,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/importer/Dockerfile
-    image: qamail-importer
+    image: kgpp/qamail-importer
     restart: always
     environment:
       - hostname=$HOSTNAME
@@ -35,7 +35,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/postfix/Dockerfile
-    image: qamail-postfix
+    image: kgpp/qamail-postfix
     restart: always
     environment:
       - hostname=$HOSTNAME
