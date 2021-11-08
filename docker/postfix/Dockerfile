@@ -1,4 +1,4 @@
-FROM debian:testing-20190204-slim
+FROM debian:stable-slim
 
 MAINTAINER Vitaly Pryakhin <v.pryakhin@gmail.com>
 
@@ -7,7 +7,8 @@ RUN mkdir -p /home/qamail
 RUN mkdir /home/qamail/Maildir
 RUN chown -R qamail:qamail /home/qamail
 
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update
+RUN apt-get upgrade -y
 RUN apt-get install -y postfix postfix-pcre rsyslog
 RUN postconf -e "virtual_alias_maps = pcre:/etc/postfix/wildcard.pcre"
 RUN postconf -e "mynetworks = 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 127.0.0.0/8, localhost"
