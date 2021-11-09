@@ -1,0 +1,18 @@
+### create session
+PUT {{host}}/api/create_session
+
+
+### list mailboxes
+GET {{host}}/api/list_mailboxes?session_key={{sessionKey}}
+
+### show mailbox content
+GET {{host}}/api/show_mailbox_content?session_key={{sessionKey}}&address={{address}}
+
+### create mailbox
+PUT {{host}}/api/create_mailbox?session_key={{sessionKey}}
+
+### show letter
+GET {{host}}/api/show_letter?session_key={{sessionKey}}&address={{address}}&letter_id=0
+
+### empty mailbox
+DELETE {{host}}/api/empty_mailbox?session_key={{sessionKey}}&address={{address}}
