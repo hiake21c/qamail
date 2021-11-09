@@ -8,7 +8,8 @@ services:
     environment:
       POSTGRES_USER: qamail      
       POSTGRES_PASSWORD: qamail
-
+    ports:
+      - "5432:5432"
   web:
     build:
       context: .
@@ -29,7 +30,7 @@ services:
     environment:
       - hostname=$HOSTNAME
     volumes:
-      - maildir:/home/app/Maildir
+      - maildir:/Users/jongminkim/qamail/app/Maildir
 
   postfix:
     build:
@@ -40,7 +41,7 @@ services:
     environment:
       - hostname=$HOSTNAME
     volumes:    
-      - maildir:/home/qamail/Maildir
+      - maildir:/Users/jongminkim/Maildir
     ports:
       - "25:25"
 
